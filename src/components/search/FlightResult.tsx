@@ -142,8 +142,8 @@ const FlightResults = () => {
         </aside>
 
         {/* Flight Results */}
-        <main className="w-full lg:w-3/4 bg-white p-4 rounded-lg shadow-md">
-          <div className="flex justify-between items-center mb-6">
+        <main className="w-full lg:w-3/4  p-4 rounded-lg shadow-md">
+          <div className="lg:flex justify-between items-center mb-6">
             <div className="flex gap-4">
               <button className="px-4 py-2 bg-blue-100 text-blue-600 rounded-lg">
                 Cheapest

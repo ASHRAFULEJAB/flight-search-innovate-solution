@@ -1,6 +1,6 @@
 import App from "@/App";
 import FlightResults from "@/components/search/FlightResult";
-import FlightSearch from "@/components/search/FlightSearch";
+import Banner from "@/pages/Banner";
 
 import { createBrowserRouter } from "react-router-dom";
 
@@ -11,7 +11,7 @@ const router = createBrowserRouter([
     children: [
       {
         index: true,
-        element: <FlightSearch />,
+        element: <Banner />,
       },
       {
         path: "results",

@@ -6,14 +6,14 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { useEffect, useState } from "react";
-import { MdAirplanemodeActive, MdAirplanemodeInactive } from "react-icons/md";
-import axios from "../utils/api";
-import FlightStore from "@/store/FlightStore";
 import PassengerDropdown from "@/pages/PassengerDropdown";
+import FlightStore from "@/store/FlightStore";
 import { Airport } from "@/types";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-
+import From from "../../assets/images/from.png";
+import To from "../../assets/images/to.png";
+import axios from "../utils/api";
 const FlightSearch = () => {
   const [airports, setAirports] = useState([]);
   // console.log(airports)
@@ -276,7 +276,7 @@ const FlightSearch = () => {
             {loading ? (
               <div className="p-4 text-center text-gray-600">Loading...</div>
             ) : (
-              filteredAirports.map((airport: Airport) => (
+              filteredAirports?.map((airport: Airport) => (
                 <DropdownMenuItem
                   key={airport.code}
                   onClick={() => onSelect(airport)} // Pass entire Airport object
@@ -343,7 +343,8 @@ const FlightSearch = () => {
       <div className="grid lg:grid-cols-4 grid-cols-1 gap-4 mb-6">
         {renderDropdown(
           "From",
-          <MdAirplanemodeActive className="text-purple-600 text-2xl" />,
+          // <MdAirplanemodeActive className="text-purple-600 text-2xl" />,
+          <img src={From} alt="" />,
           departure
             ? {
                 city_name: departure.city_name || "Unknown City",
@@ -361,7 +362,7 @@ const FlightSearch = () => {
 
         {renderDropdown(
           "To",
-          <MdAirplanemodeInactive className="text-purple-600 text-2xl" />,
+          <img src={To} alt="" />,
           arrival
             ? {
                 city_name: arrival.city_name || "Unknown City",

@@ -6,14 +6,14 @@ const Layout = () => {
   //   const location = useLocation();
   //   const isHomeRoute = location.pathname === "/";
   return (
-    <div>
+    <>
       <Header />
       {/* {isHomeRoute && <Banner />} */}
       {/* <Container> */}
       <Outlet />
       {/* </Container> */}
       <Footer />
-    </div>
+    </>
   );
 };
 
