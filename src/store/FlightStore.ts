@@ -1,7 +1,9 @@
+import { FlightResult } from "@/types";
 import { Store } from "pullstate";
 
 const FlightStore = new Store({
-  results: [], // Holds flight search results
+  results: [] as FlightResult[], // Type results
+  
 });
 
 export default FlightStore;

@@ -1,14 +1,10 @@
 import "./App.css";
-import FlightResults from "./components/search/FlightResult";
-import FlightSearch from "./components/search/FlightSearch";
+import Layout from "./layout/Layout";
 
 function App() {
   return (
     <>
-      <div>
-        <FlightSearch />
-        <FlightResults />
-      </div>
+      <Layout />
     </>
   );
 }
