@@ -12,7 +12,7 @@ const FlightResults = () => {
   console.log(results);
   const [imgBBUrls, setImgBBUrls] = useState<string[]>([]);
   const cachedImgBBUrls = useRef(new Map());
-  // console.log(imgBBUrls);
+
   const [filters, setFilters] = useState({
     price: { min: 0, max: 0, selected: [0, 0] },
   });
@@ -47,20 +47,6 @@ const FlightResults = () => {
       .toString()
       .padStart(2, "0")}`;
   };
-  // total time
-  // const formatDuration = (duration: string | undefined) => {
-  //   // console.log(duration);
-  //   if (!duration) return "N/A";
-  //   const regex = /P(?:\d+D)?T(?:(\d+)H)?(?:(\d+)M)?/;
-  //   const match = duration.match(regex);
-
-  //   const days = 0; // Add parsing for days if needed
-  //   const hours = parseInt(match?.[1] || "0", 10);
-  //   const minutes = parseInt(match?.[2] || "0", 10);
-
-  //   return `${hours + days * 24}h ${minutes}m`;
-  // };
-  // console.log(formatDuration)
 
   const handlePriceChange = (value: number[]) => {
     setFilters((prev) => ({
@@ -157,55 +143,7 @@ const FlightResults = () => {
 
       <div className="flex flex-col lg:flex-row gap-6 mt-6">
         {/* Left Sidebar */}
-        {/* <aside className="w-full lg:w-1/4 bg-white p-4 rounded-lg shadow-md">
-          <div className="mb-6">
-            <h3 className="text-lg font-semibold text-blue-600">
-              Time Remaining
-            </h3>
-            <p className="text-2xl font-bold">{formatTime(timeRemaining)}</p>
-          </div>
 
-          <div className="mb-6">
-            <h3 className="text-lg font-semibold">Price Range</h3>
-            <Slider
-              defaultValue={[filters.price.min, filters.price.max]}
-              min={filters.price.min}
-              max={filters.price.max}
-              step={100}
-              value={filters.price.selected}
-              onValueChange={handlePriceChange}
-              className="w-full"
-            />
-            <div className="flex justify-between text-sm mt-2">
-              <span>BDT {filters.price.selected[0]}</span>
-              <span>BDT {filters.price.selected[1]}</span>
-            </div>
-          </div>
-
-          <div>
-            <h3 className="text-lg font-semibold">Flight Schedules</h3>
-            <div className="flex gap-4 mt-2">
-              <button className="px-4 py-2 bg-blue-100 text-blue-600 rounded-lg">
-                Departure
-              </button>
-              <button className="px-4 py-2 bg-gray-100 text-gray-600 rounded-lg">
-                Arrival
-              </button>
-            </div>
-            <div className="mt-4 grid grid-cols-2 gap-4 text-center">
-              {["00-06 AM", "06-12 PM", "12-06 PM", "06-12 AM"].map(
-                (time, idx) => (
-                  <button
-                    key={idx}
-                    className="px-4 py-2 border rounded-lg text-sm"
-                  >
-                    {time}
-                  </button>
-                )
-              )}
-            </div>
-          </div>
-        </aside> */}
         <aside className="w-full lg:w-1/4 bg-white p-4 rounded-lg shadow-md lg:sticky lg:top-6">
           <div className="mb-6">
             <h3 className="text-lg font-semibold text-blue-600">
@@ -357,12 +295,6 @@ const FlightResults = () => {
                       {/* Arrival Details */}
                       <div className="lg:flex flex-col items-start">
                         <p className="font-semibold text-gray-800">
-                          {/* {new Date(
-                            flight?.filter.arrival_departure_time
-                          ).toLocaleTimeString([], {
-                            hour: "2-digit",
-                            minute: "2-digit",
-                          })} */}
                           {flight.filter?.arrival_departure_time
                             ? new Date(
                                 flight.filter.arrival_departure_time

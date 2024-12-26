@@ -17,20 +17,8 @@ const router = createBrowserRouter([
         path: "results",
         element: <FlightResults />,
       },
-      //   {
-      //     path: "relief-goods/:id",
-      //     element: <SingaleRelief />,
-      //   },
     ],
   },
-  //   {
-  //     path: "results",
-  //     element: <FlightResults />,
-  //   },
-  //   {
-  //     path: "*",
-  //     element: <App />,
-  //   },
 ]);
 
 export default router;

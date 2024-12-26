@@ -16,8 +16,6 @@ const Header = () => {
           <Link to="/">
             <img src={logo} alt=" Logo" className="w-full h-28" />
           </Link>
-
-          {/* <h1 className="text-lg font-semibold text-purple-700">ShareTrip</h1> */}
         </div>
         <div className="md:hidden">
           <button
@@ -44,18 +42,14 @@ const Header = () => {
           <Link to="/hotel" className="hover:text-purple-700">
             Hotel
           </Link>
-          {/* <Link to="/shop" className="hover:text-purple-700">
-            Shop
-          </Link> */}
+
           <Link to="/holiday" className="hover:text-purple-700">
             Holiday
           </Link>
           <Link to="/visa" className="hover:text-purple-700">
             Visa
           </Link>
-          {/* <Link to="/promotions" className="hover:text-purple-700">
-            Promotions
-          </Link> */}
+
           <Link
             to="/business-class"
             className="text-purple-600 hover:text-purple-700"
@@ -90,9 +84,6 @@ const Header = () => {
           </button>
         </div>
         {/* Mobile Login Button */}
-
-        {/* Login Button */}
-        {/* Login Button */}
       </div>
     </header>
   );

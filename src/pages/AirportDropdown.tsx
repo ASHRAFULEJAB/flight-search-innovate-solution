@@ -30,7 +30,7 @@ const AirportDropdown: React.FC<AirportDropdownProps> = ({
   const [searchQuery, setSearchQuery] = useState("");
 
   const filteredAirports = airports.filter((airport) =>
-    airport.city_name.toLowerCase().includes(searchQuery.toLowerCase())
+    airport.city_name?.toLowerCase().includes(searchQuery.toLowerCase())
   );
 
   return (

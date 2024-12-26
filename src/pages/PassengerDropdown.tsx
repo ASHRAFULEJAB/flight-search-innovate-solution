@@ -25,9 +25,7 @@ const PassengerDropdown: React.FC<PassengerDropdownProps> = ({
         <DropdownMenuTrigger asChild>
           <button className="bg-purple-50 p-5 rounded-lg h-[150px] w-full text-left">
             <div className="flex items-center">
-              {/* <span className="material-icons text-purple-600 text-3xl">
-                person
-              </span> */}
+              
               <div className="ml-4">
                 <p className="text-sm text-gray-500">Passenger, Class</p>
                 <h3 className="text-lg font-semibold text-gray-800">
